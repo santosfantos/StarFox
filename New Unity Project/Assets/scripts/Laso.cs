@@ -7,19 +7,22 @@ public class Laso : MonoBehaviour
     private Vector2 target;
     //boolean if laso is going towords target or going away
     private bool goForword;
+	// Bollean if laso already collected a sheep
+	public static bool collected = false;
    
     // Use this for initialization
     void Start()
     {
         target = GameManager.targetLaso;
         goForword = true;
+		collected = false;
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        if (goForword == true)
+        if (goForword == true  && !collected)
         {
             transform.position = Vector2.MoveTowards(transform.position, target, GameManager.movmentSpeed * Time.deltaTime);
             Vector3 moveDirection = gameObject.transform.position - new Vector3(-30, -8, 0);

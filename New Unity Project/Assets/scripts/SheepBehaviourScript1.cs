@@ -36,6 +36,7 @@ public class SheepBehaviourScript1 : MonoBehaviour {
         {
             GetComponent<Rigidbody2D>().gravityScale = 0;
             gotHit = true;
+			Laso.collected = true;
 
         }
     }
