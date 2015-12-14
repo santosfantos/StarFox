@@ -25,7 +25,7 @@ public class Laso : MonoBehaviour
         if (goForword == true  && !collected)
         {
             transform.position = Vector2.MoveTowards(transform.position, target, GameManager.movmentSpeed * Time.deltaTime);
-            Vector3 moveDirection = gameObject.transform.position - new Vector3(-30, -8, 0);
+            Vector3 moveDirection = gameObject.transform.position - new Vector3(0, -8.5f, 0);
             if ((moveDirection != Vector3.zero) && (transform.position.x != target.x) && (transform.position.y != target.y))
             {
                 float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
@@ -36,8 +36,8 @@ public class Laso : MonoBehaviour
 
         } else
         {
-            transform.position = Vector2.MoveTowards(transform.position, new Vector2(-30,-8), GameManager.movmentSpeed * Time.deltaTime);
-            if (transform.position.x == -30)
+            transform.position = Vector2.MoveTowards(transform.position, new Vector2(0,-8), GameManager.movmentSpeed * Time.deltaTime);
+            if (transform.position.y == -8)
             {
                 Destroy(gameObject);
                 GameManager.lasoGo = true;
