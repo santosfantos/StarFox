@@ -78,6 +78,7 @@
     <Compile Include="Assets\scripts\SheepBehaviourScript1.cs" />
     <Compile Include="Assets\scripts\WolfBehaviourScript1.cs" />
     <Compile Include="Assets\scripts\addForceScript.cs" />
+    <Compile Include="Assets\scripts\backGround.cs" />
     <Compile Include="Assets\scripts\nextAmmo.cs" />
     <Compile Include="Assets\scripts\spirit_destory.cs" />
     <Compile Include="Assets\scripts\spirit_sheep.cs" />
