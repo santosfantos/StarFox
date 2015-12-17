@@ -12,12 +12,12 @@ public class addForceScript : MonoBehaviour {
 	void Update () {
         if (transform.position.y < -1)
         {
-            GetComponent<Rigidbody2D>().AddForce(transform.up * 5 ,ForceMode2D.Force);
+            GetComponent<Rigidbody2D>().AddForce(transform.up * 30);
 
         }
         if (transform.position.y > 11)
         {
-            GetComponent<Rigidbody2D>().AddForce(-transform.up * 5,ForceMode2D.Force );
+            GetComponent<Rigidbody2D>().AddForce(-transform.up * 30);
 
         }
     }

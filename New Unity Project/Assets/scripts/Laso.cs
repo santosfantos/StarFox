@@ -24,20 +24,13 @@ public class Laso : MonoBehaviour
 
         if (goForword == true  && !collected)
         {
-            
             transform.position = Vector2.MoveTowards(transform.position, target, GameManager.movmentSpeed * Time.deltaTime);
-            Vector3 moveDirection = transform.position - new Vector3(0, -8.5f,0);
+            Vector3 moveDirection = gameObject.transform.position - new Vector3(0, -8.5f, 0);
             if ((moveDirection != Vector3.zero) && (transform.position.x != target.x) && (transform.position.y != target.y))
             {
-                Vector2 motionDirection = GetComponent<Rigidbody2D>().velocity.normalized;
-
-                //float angle = Mathf.Atan2(motionDirection.y, motionDirection.x) * Mathf.Rad2Deg;
-                //  transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-                Vector2 dir = GetComponent<Rigidbody2D>().velocity;
-
                 float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
                 transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-
+                
             }
             else { goForword = false; }
 
