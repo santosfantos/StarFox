@@ -42,14 +42,14 @@ public class GameManager : MonoBehaviour {
     //create objects
     IEnumerator createObject()
     {
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 20; i++)
         {
 
-         Instantiate(sheep, new Vector2(2, 0), Quaternion.identity);
-         yield return new WaitForSeconds(2);
+         // Instantiate(sheep, new Vector2(2, 0), Quaternion.identity);
+           //yield return new WaitForSeconds(2);
 
-            Instantiate(wolf, new Vector2(15 , i*2 ), Quaternion.identity) ;
-            yield return new WaitForSeconds(1 );
+            Instantiate(wolf, new Vector2(15 , i ), Quaternion.identity) ;
+            yield return new WaitForSeconds(0);
         }
        
         

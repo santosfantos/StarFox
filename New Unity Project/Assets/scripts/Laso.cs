@@ -36,7 +36,7 @@ public class Laso : MonoBehaviour
                 Vector2 dir = GetComponent<Rigidbody2D>().velocity;
 
                 float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
-                transform.rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
+                transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
             }
             else { goForword = false; }
