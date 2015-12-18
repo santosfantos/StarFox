@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class WolfBehaviourScript1 : MonoBehaviour {
 
     // Use this for initialization
-    public float speed = 0.02f;
+    public float speed;
     private float y1;
 
     private bool active; // active slow motion
@@ -15,21 +15,21 @@ public class WolfBehaviourScript1 : MonoBehaviour {
 
     void Start () {
         //random y axis 
-        y1 = Random.Range(0, 0.3F);
+        y1 = Random.Range(2f, 4F);
 
         
     }
    
     // Update is called once per frame
     void Update () {
-        if(active == false) transform.position = new Vector2(transform.position.x - speed, transform.position.y + y1);
+        if(active == false) transform.Translate(new Vector3(-speed,y1,0) * Time.deltaTime);
 
         if(transform.position.y < - 15) Destroy(gameObject);
 
-        if (Input.GetKeyDown(KeyCode.S))
+       /*if (Input.GetKeyDown(KeyCode.S))
         {
             StartCoroutine(bulletSlow());
-        }
+        }*/
 
 
 
@@ -56,17 +56,18 @@ public class WolfBehaviourScript1 : MonoBehaviour {
             nextAmmo.score++;
         }
     }
-    IEnumerator bulletSlow()
+  /*  IEnumerator bulletSlow()
     {
         active = true;
         
         velocity = GetComponent<Rigidbody2D>().velocity;
-        GetComponent<Rigidbody2D>().velocity = GetComponent<Rigidbody2D>().velocity / 8;
+        GetComponent<Rigidbody2D>().velocity = GetComponent<Rigidbody2D>().velocity / 2;
       
         yield return new WaitForSeconds(3);
         GetComponent<Rigidbody2D>().velocity = velocity;
         active = false;
        
 
-    }
+    }*/
+    
 }

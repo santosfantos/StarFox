@@ -8,17 +8,22 @@ public class Bullet2 : MonoBehaviour {
     //target for bullet
     private Vector2 target;
     private Vector2 vectorDirecton;
+
+   
     // Use this for initialization
     void Start () {
         target = GameManager.targetFire;
         active = true;
         vectorDirecton = new Vector2(target.x, Mathf.Abs(-8 - target.y));
-        GetComponent<Rigidbody2D>().AddForce(vectorDirecton * speed);
+        GetComponent<Rigidbody2D>().AddForce(vectorDirecton * speed ,ForceMode2D.Force);
+     
+        
     }
 	
 	// Update is called once per frame
 	void Update () {
-      
+        
+        
         if ((transform.position.x > 37) || (transform.position.y < -9) || (transform.position.x < -37))
         {
             Destroy(gameObject);
@@ -38,7 +43,7 @@ public class Bullet2 : MonoBehaviour {
     {
         if (objectCollision.gameObject.tag == "wolf")
         {
-            Explosion.active = false;
+            Explosion.collision = true;
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             GetComponent<Collider2D>().enabled = false;
 

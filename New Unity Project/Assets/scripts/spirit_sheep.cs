@@ -10,7 +10,7 @@ public class spirit_sheep : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        transform.position = Vector2.MoveTowards(transform.position, new Vector2(0, -8), GameManager.movmentSpeed * Time.deltaTime);
-        if (transform.position.y == -8) Destroy(gameObject);
+        transform.position = Vector2.MoveTowards(transform.position, new Vector2(0, -8.5f), GameManager.movmentSpeed * Time.deltaTime);
+        if (transform.position.y < -8) Destroy(gameObject);
     }
 }

@@ -8,6 +8,7 @@ public class nextAmmo : MonoBehaviour {
 
     public GameObject bullet;
     public GameObject bullet2;
+    public GameObject bullet3;
 
     public static int countAmmo;
     public static int score = 0;
@@ -18,10 +19,11 @@ public class nextAmmo : MonoBehaviour {
     public static GameObject[] ammo = new GameObject[4]; // array of "spirit" objects that player will see
 	void Start () {
         //load ammo
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 10; i++)
         {
             cartrodge.Enqueue(bullet2);
-            cartrodge.Enqueue(bullet);
+           cartrodge.Enqueue(bullet);
+            cartrodge.Enqueue(bullet3);
         }
         countAmmo = cartrodge.Count;
         ammoCountText.text = "Ammo : " + countAmmo;
@@ -38,7 +40,7 @@ public class nextAmmo : MonoBehaviour {
             {
                 ammo[3] = cartrodge.Dequeue();
 
-                ammo[3] = Instantiate(ammo[3], new Vector2(-29, -7), Quaternion.identity)as GameObject;
+                ammo[3] = Instantiate(ammo[3], new Vector2(-22, -7), Quaternion.identity)as GameObject;
             }
            //move forward array + jump object
             for (int i = 0; i < 3; i++)
