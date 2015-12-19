@@ -10,6 +10,7 @@ public class Explosion : MonoBehaviour
     public float Radius;
 
     public GameObject bullet;
+    public static bool collision; // active explosion
     public static bool active; //active function
     // Use this for initialization
     void Start()
@@ -33,7 +34,7 @@ public class Explosion : MonoBehaviour
 
 #if (UNITY_EDITOR || UNITY_WEBPLAYER)
 
-        if (Input.GetMouseButtonDown(0) && active)
+        if (Input.GetMouseButtonDown(0) && active || collision)
         {
            
             Vector3 objPos =  transform.position;
@@ -41,6 +42,7 @@ public class Explosion : MonoBehaviour
             
             Collider2D[] colliders = Physics2D.OverlapCircleAll(objPos,Radius);
             active = false;
+            collision = false;
             foreach (Collider2D item in colliders)
             {
                
@@ -48,11 +50,13 @@ public class Explosion : MonoBehaviour
                 if (rb != null && item.tag.Equals("wolf"))
                 {
                     nextAmmo.score++;
+                    
                     item.GetComponent<addForceScript>().enabled = false;
                     item.GetComponent<WolfBehaviourScript1>().enabled = false; 
                     var dir = (item.transform.position - objPos);
                     item.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
                     item.GetComponent<Rigidbody2D>().AddForce(dir.normalized * Power * Radius);
+                    item.GetComponent<Rigidbody2D>().gravityScale = 1f;
                    
                     //AddExplosionForceInwards(rb, Power, objPos, Radius);
                 }
