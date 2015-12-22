@@ -10,6 +10,12 @@ public class spirit_destory : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (transform.position.y < -10) Destroy(gameObject);
+        if (transform.position.y < -15) Destroy(gameObject);
+	}
+	void OnCollisionEnter2D(Collision2D objectCollision){
+		if (objectCollision.gameObject.tag == "hand") {
+			GetComponent<Rigidbody2D> ().velocity = Vector2.zero;
+			transform.position = new Vector2 (-43, -7);
+		}
 	}
 }

@@ -33,10 +33,7 @@ public class SheepBehaviourScript1 : MonoBehaviour {
                   
         }
 
-       /* if (Input.GetKeyDown(KeyCode.S)){
-            StartCoroutine( bulletSlow());
-        }*/
-
+      
     }
     void OnCollisionEnter2D(Collision2D objectCollision)
     {
@@ -52,21 +49,6 @@ public class SheepBehaviourScript1 : MonoBehaviour {
 
         }
     }
-    /*IEnumerator bulletSlow()
-    {
-        active = true;
-       // GetComponent<Rigidbody2D>().AddForce(-GetComponent<Rigidbody2D>().velocity * 4);
-       // movmentSpeedX = movmentSpeedX / 4;
-        //movmentSpeedY = movmentSpeedY / 4;
-       velocity = GetComponent<Rigidbody2D>().velocity;
-       GetComponent<Rigidbody2D>().velocity = GetComponent<Rigidbody2D>().velocity / 4;
-        //if(GetComponent<Rigidbody2D>().velocity < new Vector2(1,1)) GetComponent<Rigidbody2D>().velocity = velocity;
-
-        yield return new WaitForSeconds(3);
-        GetComponent<Rigidbody2D>().velocity = velocity;
-        active = false;
-        //GetComponent<Rigidbody2D>().velocity = GetComponent<Rigidbody2D>().velocity * 4;
-       
-    }*/
+   
   
 }

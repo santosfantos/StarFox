@@ -1,0 +1,83 @@
+﻿Merge remote-tracking branch 'origin/dotan' into dotan
+
+# Conflicts:
+#	New Unity Project/Assembly-CSharp-firstpass.csproj
+#	New Unity Project/Assembly-CSharp.csproj
+#	New Unity Project/Assets/levels/level 6.unity
+#	New Unity Project/Assets/scripts/GameManager.cs
+#	New Unity Project/Assets/scripts/WolfBehaviourScript1.cs
+#	New Unity Project/Library/CurrentLayout.dwlt
+#	New Unity Project/Library/EditorUserBuildSettings.asset
+#	New Unity Project/Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll
+#	New Unity Project/Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll.mdb
+#	New Unity Project/Library/ScriptAssemblies/Assembly-CSharp.dll
+#	New Unity Project/Library/ScriptAssemblies/Assembly-CSharp.dll.mdb
+#	New Unity Project/Library/assetDatabase3
+#	New Unity Project/Library/metadata/00/00000000000000002000000000000000
+#	New Unity Project/Library/metadata/00/00000000000000003000000000000000
+#	New Unity Project/Library/metadata/00/00000000000000004000000000000000
+#	New Unity Project/Library/metadata/00/00000000000000004100000000000000
+#	New Unity Project/Library/metadata/00/00000000000000005000000000000000
+#	New Unity Project/Library/metadata/00/00000000000000006000000000000000
+#	New Unity Project/Library/metadata/00/00000000000000006100000000000000
+#	New Unity Project/Library/metadata/00/00000000000000007000000000000000
+#	New Unity Project/Library/metadata/00/00000000000000008000000000000000
+#	New Unity Project/Library/metadata/00/00000000000000008100000000000000
+#	New Unity Project/Library/metadata/00/00000000000000009000000000000000
+#	New Unity Project/Library/metadata/00/0000000000000000a000000000000000
+#	New Unity Project/Library/metadata/00/0000000000000000b000000000000000
+#	New Unity Project/Library/metadata/00/0000000000000000c000000000000000
+#	New Unity Project/Library/metadata/5f/5f32cd94baa94578a686d4b9d6b660f7
+#	New Unity Project/Library/metadata/73/739bbd9f364b4268874f9fd86ab3beef
+#	New Unity Project/Library/metadata/80/80a3616ca19596e4da0f10f14d241e9f
+#	New Unity Project/Library/metadata/85/852e56802eb941638acbb491814497b0
+#	New Unity Project/Library/metadata/87/870353891bb340e2b2a9c8707e7419ba
+#	New Unity Project/Library/metadata/97/97decbdab0634cdd991f8d23ddf0dead
+#	New Unity Project/Library/metadata/f5/f5f67c52d1564df4a8936ccd202a3bd8
+#	New Unity Project/New Unity Project.userprefs
+#
+# It looks like you may be committing a merge.
+# If this is not correct, please remove the file
+#	.git/MERGE_HEAD
+# and try again.
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch dotan
+# Your branch and 'origin/dotan' have diverged,
+# and have 1 and 1 different commit each, respectively.
+#   (use "git pull" to merge the remote branch into yours)
+#
+# All conflicts fixed but you are still merging.
+#
+# Changes to be committed:
+#	modified:   New Unity Project/Assembly-CSharp-firstpass.csproj
+#	modified:   New Unity Project/Assembly-CSharp.csproj
+#	new file:   New Unity Project/Assets/levels/Level 5.unity
+#	renamed:    New Unity Project/Assets/assests/Thumbs.db.meta -> New Unity Project/Assets/levels/Level 5.unity.meta
+#	modified:   New Unity Project/Assets/levels/level 5.unity
+#	modified:   New Unity Project/Assets/levels/level 5.unity.meta
+#	modified:   New Unity Project/Assets/levels/level 6.unity.meta
+#	renamed:    New Unity Project/Assets/sprite.meta -> New Unity Project/Assets/levels/level 6.unity.meta~HEAD
+#	new file:   New Unity Project/Assets/levels/level2.unity
+#	new file:   New Unity Project/Assets/levels/level2.unity.meta
+#	new file:   New Unity Project/Assets/levels/level3.unity
+#	new file:   New Unity Project/Assets/levels/level3.unity.meta
+#	new file:   New Unity Project/Assets/levels/level4.unity
+#	new file:   New Unity Project/Assets/levels/level4.unity.meta
+#	modified:   New Unity Project/Assets/scripts/GameManager.cs
+#	modified:   New Unity Project/Assets/scripts/WolfBehaviourScript1.cs
+#	modified:   New Unity Project/Library/AssetImportState
+#	modified:   New Unity Project/Library/ScriptAssemblies/BuiltinAssemblies.stamp
+#	modified:   New Unity Project/Library/metadata/05/05f349a085fefc343ab39199219da503.info
+#	modified:   New Unity Project/Library/metadata/51/511ed2d15a01e3b42b00f5256a136905.info
+#	modified:   New Unity Project/Library/metadata/52/521f02669a7ab454a97e9434f5ac815a.info
+#	modified:   New Unity Project/Library/metadata/79/79222edfc4da03b4fbee741259ed4673.info
+#	modified:   New Unity Project/Library/metadata/85/85e03fb8233a74554a21a96cc72fdc96.info
+#	modified:   New Unity Project/Library/metadata/e1/e152a836bd8be9f46ae0ec2e6daff77a.info
+#	deleted:    New Unity Project/Library/metadata/fd/fd4040c4f53dd9b4793f8d65c9c193be
+#	deleted:    New Unity Project/Library/metadata/fd/fd4040c4f53dd9b4793f8d65c9c193be.info
+#	modified:   New Unity Project/New Unity Project.userprefs
+#
+

@@ -1,9 +1,18 @@
-﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/scripts/Laso.cs">
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\Explosion.cs">
     <Files>
-      <File FileName="Assets/scripts/Laso.cs" Line="17" Column="26" />
-      <File FileName="Assets/scripts/SheepBehaviourScript1.cs" Line="39" Column="26" />
+      <File FileName="Assets\scripts\Explosion.cs" Line="84" Column="1" />
+      <File FileName="Assets\scripts\GameManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\nextAmmo.cs" Line="27" Column="30" />
+      <File FileName="Assets\scripts\Bullet2.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\Bullet.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\handMotion.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\loadSheep.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\Bullet3.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\WolfBehaviourScript1.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\Bar.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\spirit_destory.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

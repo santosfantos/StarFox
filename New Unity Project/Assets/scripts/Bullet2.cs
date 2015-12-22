@@ -14,8 +14,9 @@ public class Bullet2 : MonoBehaviour {
     void Start () {
         target = GameManager.targetFire;
         active = true;
-        vectorDirecton = new Vector2(target.x, Mathf.Abs(-8 - target.y));
-        GetComponent<Rigidbody2D>().AddForce(vectorDirecton * speed ,ForceMode2D.Force);
+		Vector2 heading = target - new Vector2(-31.5f,-7f);
+
+		GetComponent<Rigidbody2D>().AddForce(heading * speed,ForceMode2D.Force);
      
         
     }
@@ -29,6 +30,7 @@ public class Bullet2 : MonoBehaviour {
             Destroy(gameObject);
             GameManager.sheepExplodeGo = false;
             GameManager.vasat = false;
+
         }
         if (Input.GetMouseButtonDown(0) && active == true)
         {

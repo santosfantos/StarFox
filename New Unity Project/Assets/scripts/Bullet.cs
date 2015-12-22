@@ -13,8 +13,10 @@ public class Bullet : MonoBehaviour
     {
         target = GameManager.targetFire;
         
-        vectorDirecton = new Vector2( target.x, Mathf.Abs(-8 - target.y));
-        GetComponent<Rigidbody2D>().AddForce(vectorDirecton * speed,ForceMode2D.Force);
+		Vector2 heading = target - new Vector2(-31.5f,-7f);
+
+			GetComponent<Rigidbody2D> ().AddForce (heading * speed, ForceMode2D.Force);
+
     }
 
     // Update is called once per frame

@@ -15,8 +15,9 @@ public class Bullet3 : MonoBehaviour {
     void Start () {
         target = GameManager.targetFire;
 
-        vectorDirecton = new Vector2(target.x, Mathf.Abs(-8 - target.y));
-        GetComponent<Rigidbody2D>().AddForce(vectorDirecton * speed, ForceMode2D.Force);
+		Vector2 heading = target - new Vector2(-31.5f,-7f);
+
+		GetComponent<Rigidbody2D>().AddForce(heading * speed,ForceMode2D.Force);
     }
 	
 	// Update is called once per frame
@@ -36,7 +37,9 @@ public class Bullet3 : MonoBehaviour {
        
         if (objectCollision.gameObject.tag == "wolf")
         {
-            objectCollision.gameObject.GetComponent<Collider2D>().enabled = false;
+			GameManager.wolfcounter++;
+            //objectCollision.gameObject.GetComponent<Collider2D>().enabled = false;
+
             objectCollision.gameObject.GetComponent<Rigidbody2D>().gravityScale = 1f;
             objectCollision.gameObject.GetComponent<WolfBehaviourScript1>().enabled = false;
             objectCollision.gameObject.GetComponent<addForceScript>().enabled = false;
@@ -45,15 +48,17 @@ public class Bullet3 : MonoBehaviour {
            
             Vector3 objPos = transform.position;
             Collider2D[] colliders = Physics2D.OverlapCircleAll(objPos, Radius);
+
             if (active == true)
             {
                 for (int i = 0; i < colliders.Length; i++)
                 {
                     if (colliders[i] != null && colliders[i].tag.Equals("wolf"))
                     {
+						
                         GetComponent<Rigidbody2D>().velocity = Vector2.zero;
                         Vector2 dir = (colliders[i].transform.position - objPos);
-                        GetComponent<Rigidbody2D>().AddForce(dir * (speed ));
+                        GetComponent<Rigidbody2D>().AddForce(dir * (speed ) * 1.5f);
                         active = false;
                         break;
                     }
@@ -67,7 +72,7 @@ public class Bullet3 : MonoBehaviour {
     IEnumerator jump()
     {
     
-    yield return new WaitForSeconds(1);
+    	yield return new WaitForSeconds(1);
         GetComponent<Rigidbody2D>().AddForce(vectorDirecton * (speed / 4), ForceMode2D.Force);
         jumpoff = false;
     }

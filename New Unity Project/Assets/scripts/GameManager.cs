@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System;
-using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
@@ -21,47 +20,33 @@ public class GameManager : MonoBehaviour {
     public GameObject bullet;
     public GameObject bullet2;
     public GameObject bullet3;
+	public GameObject bullet4;
 
     public GameObject bullet_spirit;
     public GameObject bullet2_spirit;
     public GameObject bullet3_spirit;
+	public GameObject bullet4_spirit;
+
+	public GameObject sheepToFire; // child of "hand"
 
     private GameObject p;
     public Animator anim; // hand animator
     public static Vector2 targetFire; //vector for target to fire at
     public static Vector2 targetLaso; //vector for laso to go to
-
+	private float random1;
+	private float random2;
+	public static int life = 3; // life counter
+	public static int wolfcounter = 0 ; // counter for the wolf amount on the screen
     // Use this for initialization
     void Start () {
-
-       
-        StartCoroutine(createObject());
-
-       
-        
+		
     }
-    //create objects
-    IEnumerator createObject()
-    {
-        for (int i = 0; i < 10; i++)
-        {
-
-          Instantiate(sheep, new Vector2(2, 0), Quaternion.identity);
-           yield return new WaitForSeconds(2);
-
-            Instantiate(wolf, new Vector2(15 , i ), Quaternion.identity) ;
-            yield return new WaitForSeconds(0);
-        }
-       
-        
-       
-    }
-
    
 
 
     // Update is called once per frame
     void Update () {
+		
         if (Input.GetKeyDown(KeyCode.P)) { pauseGame(); }
         if (Input.GetKeyDown(KeyCode.D)) { doubleShot(); }
 
@@ -74,7 +59,7 @@ public class GameManager : MonoBehaviour {
                 
 
                 StartCoroutine( fire());
-                active = false;
+                //active = false;
             }
             else
             {
@@ -88,12 +73,16 @@ public class GameManager : MonoBehaviour {
             lasoFire();
         }
         if (Input.GetMouseButtonDown(2)) { }
-        if (Input.GetKeyDown(KeyCode.S)) { StartCoroutine (slowMotion()); }
+       
+		if (life == 0) {
+			Application.LoadLevel ("lost");
+		}
     }
     IEnumerator  fire()
     {
+		sheepToFire.GetComponent<Renderer> ().enabled = false;
         p = nextAmmo.ammo[0];
-
+		loadSheep.hasSheep = false;
 
 
         anim.SetBool("Fired", true);
@@ -102,29 +91,33 @@ public class GameManager : MonoBehaviour {
         if (p != null)
         {
 
-            p.GetComponent<Rigidbody2D>().AddForce(new Vector2(250, 250)); // to move first element in queue
+
             nextAmmo.ammo[0] = null; // to initialize reload
-            
-            yield return new WaitForSeconds(0.5f);
+		
+		
+			if (pause == false) {
+				yield return new WaitForSeconds (0.5f);
+			}
+
             if (p.tag == bullet_spirit.tag)
             {
                 if(doubleShotActive == true)
                 {
-                    Instantiate(bullet, new Vector2(0, -7f), Quaternion.identity);
+					Instantiate(bullet, new Vector2(-32f, -6f), Quaternion.identity);
                     yield return new WaitForSeconds(0.5f);
                     anim.SetBool("Fired", true);
                     StartCoroutine(fireAnim());
-                    Instantiate(bullet, new Vector2(0, -7f), Quaternion.identity);
+
                     
                 }
-                Instantiate(bullet, new Vector2(0, -7f), Quaternion.identity);
+				Instantiate(bullet, new Vector2(-32f, -6f), Quaternion.identity);
             }
             if (p.tag == bullet2_spirit.tag)
             {
                 sheepExplodeGo = true;
                 if (doubleShotActive == true)
                 {
-                    Instantiate(bullet2, new Vector2(0, -7f), Quaternion.identity);
+					Instantiate(bullet2, new Vector2(-32f, -6f), Quaternion.identity);
 
                     anim.SetBool("Fired", true);
                     yield return new WaitForSeconds(0.5f);
@@ -132,14 +125,14 @@ public class GameManager : MonoBehaviour {
                     
                 }
                 
-                Instantiate(bullet2, new Vector2(0, -7f), Quaternion.identity);
+				Instantiate(bullet2, new Vector2(-32f, -6f), Quaternion.identity);
 
             }
             if (p.tag == bullet3_spirit.tag)
             {
                 if (doubleShotActive == true)
                 {
-                    Instantiate(bullet3, new Vector2(0, -7f), Quaternion.identity);
+					Instantiate(bullet3, new Vector2(-32f, -6f), Quaternion.identity);
                    
                     anim.SetBool("Fired", true);
                     yield return new WaitForSeconds(0.5f);
@@ -147,17 +140,23 @@ public class GameManager : MonoBehaviour {
                    
                 } 
                 
-                Instantiate(bullet3, new Vector2(0, -7f), Quaternion.identity);
+				Instantiate(bullet3, new Vector2(-32f, -6f), Quaternion.identity);
             }
+			if (p.tag == bullet4_spirit.tag)
+			{
+				
+
+				Instantiate(bullet4, new Vector2(-32f, -6f), Quaternion.identity);
+			}
             
         }
         doubleShotActive = false;
-        active = true;
+		active = true;
     }
     private void lasoFire()
     {   
         if(lasoGo == true)
-        Instantiate(laso, new Vector2(0, -8.5f), Quaternion.LookRotation(new Vector3(targetLaso.x,targetLaso.y)));
+			Instantiate(laso, new Vector2(-32f, -7f), Quaternion.LookRotation(new Vector3(targetLaso.x,targetLaso.y)));
         
         lasoGo = false;
         
@@ -176,12 +175,7 @@ public class GameManager : MonoBehaviour {
             Time.timeScale = 1f;
         }
     }
-    IEnumerator slowMotion()
-    {
-        Time.timeScale = 0.5f;
-        yield return new WaitForSeconds(1.5f);
-        Time.timeScale = 1f;
-    }
+    
     IEnumerator fireAnim()
     {
             yield return new WaitForSeconds(0.2f);

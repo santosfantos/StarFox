@@ -26,7 +26,7 @@ public class Laso : MonoBehaviour
         {
             
             transform.position = Vector2.MoveTowards(transform.position, target, GameManager.movmentSpeed * Time.deltaTime);
-            Vector3 moveDirection = transform.position - new Vector3(0, -8.5f,0);
+            Vector3 moveDirection = transform.position - new Vector3(-31.5f, -7f,0);
             if ((moveDirection != Vector3.zero) && (transform.position.x != target.x) && (transform.position.y != target.y))
             {
                 // Vector2 motionDirection = GetComponent<Rigidbody2D>().velocity.normalized;
@@ -38,15 +38,15 @@ public class Laso : MonoBehaviour
                 //  transform.rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
 
                 float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
-                transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+                transform.rotation = Quaternion.AngleAxis(angle - 90 , Vector3.forward);
             }
             else { goForword = false; }
 
         } else
         {
             GetComponent<Collider2D>().enabled = false;
-            transform.position = Vector2.MoveTowards(transform.position, new Vector2(0,-8.5f), GameManager.movmentSpeed * Time.deltaTime);
-            if (transform.position.y == -8.5f)
+            transform.position = Vector2.MoveTowards(transform.position, new Vector2(-32f,-7f), GameManager.movmentSpeed * Time.deltaTime);
+            if (transform.position.x == -32f)
             {
                 Destroy(gameObject);
                 GameManager.lasoGo = true;

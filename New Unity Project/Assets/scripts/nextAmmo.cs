@@ -9,12 +9,14 @@ public class nextAmmo : MonoBehaviour {
     public GameObject bullet;
     public GameObject bullet2;
     public GameObject bullet3;
+	public GameObject bullet4;
 
     public static int countAmmo;
     public static int score = 0;
 
     public Text ammoCountText; // GUI text for ammo count
     public Text scoreText; // GUI text for score
+	public Text Life; // GUI text for life
     // Use this for initialization
     public static GameObject[] ammo = new GameObject[4]; // array of "spirit" objects that player will see
 	void Start () {
@@ -22,8 +24,10 @@ public class nextAmmo : MonoBehaviour {
         for (int i = 0; i < 10; i++)
         {
             cartrodge.Enqueue(bullet2);
-           cartrodge.Enqueue(bullet);
-            cartrodge.Enqueue(bullet3);
+			cartrodge.Enqueue(bullet);
+          // cartrodge.Enqueue(bullet4);
+			cartrodge.Enqueue(bullet);
+            //cartrodge.Enqueue(bullet3);
         }
         countAmmo = cartrodge.Count;
         ammoCountText.text = "Ammo : " + countAmmo;
@@ -47,7 +51,7 @@ public class nextAmmo : MonoBehaviour {
             { 
                 if (ammo[i] != null)
                 {
-                    ammo[i].GetComponent<Rigidbody2D>().AddForce(new Vector2( 125,  125));
+                    ammo[i].GetComponent<Rigidbody2D>().AddForce(new Vector2( -200,  150));
                    
                 }
                 ammo[i] = ammo[i + 1];
@@ -64,6 +68,7 @@ public class nextAmmo : MonoBehaviour {
         }
         ammoCountText.text = "Ammo : " + countAmmo;
         scoreText.text = "Score : " + score;
+		Life.text = "Life : " + GameManager.life;
     }
    
 }
